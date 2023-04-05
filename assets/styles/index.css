@@ -1,0 +1,993 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Roboto+Slab:wght@300&display=swap');
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --blue: rgb(55, 149, 226);
+    --blue-2: rgb(3, 34, 59);
+    --yellow: rgb(219, 219, 93);
+}
+
+body {
+    height: 100vh;
+
+}
+
+header {
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    position: relative;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.link-dropdown-container {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;;
+    -webkit-transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+.bg-image {
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+}
+
+
+.bg-overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 5rem;
+    z-index: 999;
+}
+
+.nav-name {
+    font-family: 'Lora', serif;
+    color: white;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.link-list {
+    height: 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-list li::after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 0;
+    background-color: transparent;
+    transition: width 1s ease, background-color 1s ease;
+}
+
+li:hover:after {
+    width: 100%;
+    background: white;
+}
+
+.link-list li {
+    list-style: none;
+}
+
+.list-item {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.cover-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -55%);
+    padding: 30px 0px;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: -webkit-linear-gradient( rgb(229, 230, 170), rgb(214, 214, 167), rgb(214, 214, 167), rgb(182, 207, 228), rgb(146, 198, 241));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cover-text-1 {
+    font-size: 50px;
+}
+
+.cover-text-2,
+.cover-text-3 {
+    font-size: 100px;
+}
+
+.cover-button {
+    background-color: transparent;
+    outline: none;
+    border: 2px solid rgb(146, 198, 241);
+    padding: 10px 15px;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.cover-button a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* body section 
+    includes: 
+        about-me section
+        projects section
+
+*/
+
+.aboutme-section,
+.projects-section {
+    padding: 5rem;
+}
+
+.aboutme-title-container,
+.project-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Lora', serif;
+}
+
+.aboutme-title-upper,
+.project-title-upper {
+    font-size: 20px;
+}
+
+.aboutme-title-lower,
+.project-title-lower {
+    font-size: 40px;
+    color: var(--blue);
+    width: 30%;
+    position: relative;
+}
+
+.aboutme-title-lower span {
+    background-color: white;
+}
+
+.aboutme-title-lower::before {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 50%;
+    background-color: var(--blue);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+}
+
+.aboutme-title-lower::after {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 50%;
+    background-color: var(--blue);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: -1;
+}
+
+
+.upper-content-container,
+.lower-content-container {
+    padding: 5rem 2rem 0 2rem;
+}
+
+.upper-content-container {
+    
+    display: flex;
+    gap: 25px;
+}
+
+.left-side-container,
+.right-side-container {
+    width: 50%;
+}
+
+.left-side-container h5,
+.right-side-container h5,
+.lower-content-container h5 {
+    font-family: 'Lora', serif;
+    font-size: 25px;
+    color: var(--blue);
+    padding-left: 10px;
+    border-left: 2px solid var(--blue);
+}
+
+.left-side-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.left-side-container p {
+    
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+}
+
+.tech-container {
+    padding-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.tech-box {
+    border: 2px solid rgba(146, 198, 241, 0.3);
+    padding: 20px;
+    transition: border .5s ease-in-out;
+}
+
+.tech-box {
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+}
+
+.tech-box:hover {
+    border: 2px solid var(--blue);
+}
+
+.lower-content-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 200px;
+}
+
+.lower-content-list li{
+    list-style: none;
+    font-size: 20px;
+    font-family: 'Roboto Slab', serif;
+    padding: 10px;
+}
+
+
+/* mainly project section */
+
+.projects-section {
+    background-color: rgb(241, 237, 237);
+    position: relative;
+}
+
+.project-gallery-container {
+    padding-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.project-card {
+    width: 420px;
+    border: 3px solid var(--blue);
+    aspect-ratio: 10 / 16;
+    border-radius: 1rem;
+    background-color: rgba(146, 198, 241, 0.7);
+    overflow: hidden;
+    position: relative;
+
+}
+
+.screen-overlay {
+    position:absolute;
+    background: linear-gradient(
+        rgba(146, 198, 241, 0.4), 
+        rgba(146, 198, 241, 0.4) 3px,
+        transparent 3px,
+        transparent 9px);
+    background-size: 100% 9px;
+    height: 100%;
+    width: 100%;
+    animation: pan-overlay 40s infinite linear;
+}
+
+.card-content-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: .5rem;
+    width: 90%;
+    height: 93%;
+    border: 2px solid rgba(46, 135, 207, 0.9);
+}
+
+.content-title-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.content-container {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.content-button-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-button-container button {
+    padding: 10px 15px;
+    font-size: 15px;
+    color: white;
+    background-color: rgba(46, 135, 207);
+    border-radius: .5rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.content-button-container button a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Lora', serif;
+}
+
+.content-title {
+    border: 2px solid rgba(46, 135, 207, 0.9);
+    background-color: rgba(46, 135, 207);
+    border-radius: .5rem;
+    padding: 10px 25px;
+    text-align: center;
+    font-size: 45px;
+    color: rgb(255, 255, 255);
+    font-family: 'Lora', serif;
+}
+
+.project-card > img {
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    background-size: 300%;
+    opacity: 0.;
+    filter: sepia(40%);  
+}
+
+.card-1 {
+    background-image: url(../images/diary.jpg);
+    animation: pan-image-1 25s linear infinite;
+    
+}
+
+.card-2 {
+    background-image: url(../images/foodhub.jpg);
+    animation: pan-image-2 45s linear infinite;
+    
+}
+
+.card-3 {
+    background-image: url(../images/developlaza.png);
+    animation: pan-image-2 45s linear infinite;
+}
+/* screen overlay animation */
+
+@keyframes pan-overlay {
+    from {
+        background-position: 0% 0%;
+    }
+
+    to {
+        background-position: 0% -100%;
+    }
+}
+
+@keyframes pan-image-1 {
+    0% {
+        background-position: 20% 1%;
+        background-size: 700%;
+        
+    }
+    
+    33% {
+        background-position: 30% 1%;
+    
+    }
+
+    33.0001% {
+        background-position: 10% 20%;
+
+    }
+
+    66% {
+        background-position: 10% 100%;
+        
+    }
+
+    66.0001% {
+        background-position: 62% 95%;
+      
+    }
+
+    100% {
+        background-position: 72% 22%;
+       
+    }
+}
+
+@keyframes pan-image-2 {
+    0% {
+        
+        background-position: 20% 20%;
+    }
+    
+    20% {
+        
+        background-position: 60% 20%;
+
+    }
+
+    20.0001% {
+        
+        background-position: 40% 20%;
+    }
+
+    40% {
+        
+        background-position: 40% 80%;
+    }
+
+    40.0001% {
+        
+        background-position: 80% 80%;
+    }
+
+    60% {
+        
+        background-position: 20% 20%;
+    }
+
+    60.0001% {
+       
+        background-position: 1% 1%;
+    }
+
+    80% {
+        
+        background-position: 100% 1%;
+    }
+
+    80.0001% {
+        
+        background-position: 10% 100%;
+
+    }
+
+    100% {
+        background-position: 90% 100%;
+    }
+}
+
+/* Footer */
+
+footer {
+    background-color: var(--blue-2);
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 5rem;
+}
+
+.social-handle-container ul{
+    display: flex;
+    gap: 40px;
+}
+
+.social-handle-container ul li{
+    list-style: none;
+}
+
+.social-handle-container ul li a{
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+
+}
+
+.arrow-container a {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+}
+@media (max-width: 1440px) {
+ 
+    .content-title {
+       
+       
+        padding: 12px 15px;
+        text-align: center;
+        font-size: 25px;
+        color: rgb(255, 255, 255);
+        font-family: 'Lora', serif;
+    }
+
+    .aboutme-title-lower,
+    .project-title-lower {
+        width: 40%;
+
+    }
+    
+}
+
+@media (min-width: 1201px) {
+    .cover-text-2,
+    .cover-text-3 {
+        font-size: 70px;
+    }  
+}
+
+@media (max-width: 1200px) {
+    .aboutme-title-lower,
+    .project-title-lower {
+        font-size: 25;
+
+    }
+
+    .cover-text-2,
+    .cover-text-3 {
+        font-size: 55px;
+    }  
+
+    .left-side-container h5,
+    .right-side-container h5,
+    .lower-content-container h5 {
+         
+        font-size: 22px;
+       
+    }
+        
+} 
+
+@media (max-width: 1024px) {
+    .nav-name {
+        font-size: 30px;
+    }
+
+    .cover-text-1 {
+        font-size: 40px;
+    }
+
+    .cover-text-2,
+    .cover-text-3 {
+        font-size: 48px;
+    }  
+    
+
+    .aboutme-title-lower,
+    .project-title-lower {
+        font-size: 30px;
+    }
+
+
+    .content-container {
+        bottom: 6%;
+    }
+
+    .aboutme-title-lower,
+    .project-title-lower {
+        width: 40%;
+        font-size: 27px;
+    }
+
+    .left-side-container p {
+    
+        font-family: 'Roboto Slab', serif;
+        font-size: 17px;
+    }
+
+    .tech-box {
+        font-size: 17px;
+    }
+
+    
+    .lower-content-list li{
+        font-size: 17px;  
+        padding: 7px;
+    }
+
+    .aboutme-section {
+        padding: 2rem;
+    }
+
+    .projects-section {
+        padding: 2rem 3rem 2rem 3rem;
+    }
+
+    .navbar-container {
+      
+        padding: 15px 3rem;
+        
+    }
+
+    footer {
+        padding: 1.5rem 3rem;
+    }
+   
+}
+
+@media (max-width: 900px) {
+    .content-title {
+       
+       
+      
+        font-size: 20px;
+        
+    }
+}
+
+@media (max-width: 850px) {
+    .cover-text-2,
+    .cover-text-3 {
+        font-size: 42px;
+    }  
+
+    .aboutme-title-lower,
+    .project-title-lower {
+        font-size: 25px;
+    }
+
+    .left-side-container h5,
+    .right-side-container h5,
+    .lower-content-container h5 {
+         
+        font-size: 20px;
+    }
+
+  
+        
+}
+
+@media (max-width: 768px) {
+    .nav-name {
+        font-size: 25px;
+    }
+
+    .cover-text-1 {
+        font-size: 30px;
+    }
+
+    .cover-text-2,
+    .cover-text-3 {
+        font-size: 40px;
+    }  
+    
+
+
+    .aboutme-title-lower,
+    .project-title-lower {
+        font-size: 27px;
+        width: 50%;
+    }
+
+
+    .content-container {
+        bottom: 6%;
+    }
+    
+    .list-item {
+        font-size: 16px;
+    }
+
+    .tech-box {
+        padding: 15px;
+
+    }
+
+    .aboutme-section {
+        padding: 1.5rem;
+    }
+
+    .link-container {
+        display: none;
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .link-dropdown-container {
+        display: block;
+        position: fixed;
+        top: 6%;
+        right: -100%;
+        width: 16%;
+        transition: .5s;
+    }
+
+    .link-dropdown-container.active {
+        right: 0;
+    }
+
+    .link-dropdown-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .link-dropdown-list li {
+        list-style: none;
+        border-radius: 50%;
+        border: 2px solid var(--blue);
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .list-dropdown-item {
+        color: var(--blue);     
+    }
+
+    .list-dropdown-item i {
+        font-size: 20px;
+    }
+
+ 
+
+    .upper-content-container {
+        flex-direction: column;
+        padding-top: 3rem;
+    }
+
+    .left-side-container,
+    .right-side-container {
+        width: 100%;
+    }
+
+    .aboutme-title-upper,
+    .project-title-upper {
+        font-size: 18px;
+    }
+
+    .cover-button a {
+    
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .cover-button { 
+        padding: 5px 10px;
+
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-name {
+        font-size: 20px;
+    }
+
+    .link-dropdown-container {
+        width: 14%;  
+    }
+
+    .link-dropdown-list li {
+        width: 40px;
+        height: 40px;
+    }
+
+    .list-dropdown-item i {
+        font-size: 15px;
+    }
+
+    .left-side-container h5,
+    .right-side-container h5,
+    .lower-content-container h5 {
+         
+        font-size: 17px;
+    }
+
+    .tech-box {
+        font-size: 15px;
+    }
+
+    .left-side-container p {
+        font-size: 15px;
+    }
+
+    header {
+        height: 45vh;  
+    }
+
+    .lower-content-list li {
+        font-size: 15px;
+        padding: 3px;
+    }
+
+    .cover-text-container {
+        width: 70%;
+    }
+
+    .project-title-lower {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .upper-content-container {
+        padding-top: 1.5rem;
+    }
+
+    .aboutme-title-upper,
+    .project-title-upper {
+        font-size: 15px;
+    }
+
+    .aboutme-title-lower,
+    .project-title-lower {
+        font-size: 20px;
+    }
+
+    .left-side-container h5,
+    .right-side-container h5,
+    .lower-content-container h5 {
+        font-size: 15px;
+    }
+
+    .aboutme-title-lower::before,
+    .aboutme-title-lower::after  {
+        height: 2px;  
+    }
+    
+    .aboutme-section  {
+        padding: 1rem;
+    }
+
+    
+}
+
+@media (max-width: 450px) {
+    .navbar-container {
+        padding: 10px 1rem;
+    }
+
+    .link-dropdown-container {
+        width: 14%;  
+    }
+
+
+    .cover-button a {
+        font-size: 12px;
+    }
+    .social-handle-container ul li a,
+    .arrow-container a {
+        font-size: 20px;
+    }
+
+    footer {
+        padding: 1.5rem 1.5rem;
+    }
+
+    .aboutme-section {
+        padding: .5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .cover-text-2,
+    .cover-text-3 {
+        font-size: 30px;
+    }  
+
+    .link-dropdown-container {
+        width: 15%;  
+    }
+
+
+    .cover-text-1 {
+        font-size: 20px;
+    }
+    
+    .cover-text-container {
+        gap: 10px;
+    }
+
+    .lower-content-list {
+        height: fit-content;
+    }   
+    
+    .aboutme-title-lower,
+    .project-title-lower {
+        font-size: 17px;
+    } 
+}
+
+@media (max-width: 350px) {
+    .aboutme-title-lower,
+    .project-title-lower {
+        font-size: 15px;
+    }
+    
+    .link-dropdown-container {
+        width: 18%;  
+    }
+
+
+    .aboutme-title-lower {
+        width: 70%;
+    }
+
+    .content-title {
+        font-size: 15px;
+        padding: 5px 1px;
+    }
+
+    .content-button-container button {
+        font-size: 10px;
+    } 
+
+    .lower-content-list li {
+        font-size: 13px;
+        padding: 3px;
+    }
+}
