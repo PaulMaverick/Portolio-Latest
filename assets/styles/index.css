@@ -418,6 +418,11 @@ li:hover:after {
     background-image: url(../images/developlaza.png);
     animation: pan-image-2 45s linear infinite;
 }
+
+.card-4 {
+    background-image: url(../images/crud.jpg);
+    animation: pan-image-1 25s linear infinite;
+}
 /* screen overlay animation */
 
 @keyframes pan-overlay {
