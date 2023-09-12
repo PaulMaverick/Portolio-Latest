@@ -10,6 +10,7 @@
     --blue: rgb(55, 149, 226);
     --blue-2: rgb(3, 34, 59);
     --yellow: rgb(219, 219, 93);
+    --midnight-blue: #00183E;
 }
 
 body {
@@ -286,6 +287,77 @@ li:hover:after {
     font-size: 20px;
     font-family: 'Roboto Slab', serif;
     padding: 10px;
+}
+
+/* for work Experience */
+
+.work-history-section {
+    padding: 5rem;
+    background-color: var(--midnight-blue)
+}
+
+.work-history-header {
+    text-align: center;
+    color: var(--blue);
+    font-size: 40px;
+}
+
+
+
+.work-history-section article {
+    color: white;
+    margin-top: 50px;
+}
+
+.work-history-company{
+    font-family: 'Lora', serif;
+    font-size: 25px;
+    color: var(--blue);
+    padding-left: 10px;
+    border-left: 2px solid var(--blue);
+}
+
+.work-history-date,
+.work-history-job,
+.work-history-description {
+    margin-top: 15px;
+    padding-left: 15px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+}
+
+
+.work-history-subdescription {
+    margin-top: 25px;
+    padding-left: 40px;
+    font-family: 'Roboto Slab', serif;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.work-history-link {
+    margin-top: 25px;
+    padding-left: 15px;
+}
+
+.work-history-link button {
+    padding: 10px 18px;
+    background-color: transparent;
+    border: 2px var(--blue) solid;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    border-radius: 8px;
+}
+
+.work-history-link button:hover {
+    cursor: pointer;
+}
+
+.work-history-buttons {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
 }
 
 
